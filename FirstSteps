@@ -42,15 +42,15 @@ void display(){
 	
 }
 void add_user(){
-		FILE *fptr;
-		printf("Enter Username or Email:\n");
-		scanf("%s", person1.username);
-		printf("%s\n", person1.username);
-		printf("Enter password:\n");
-		scanf("%s", person1.password);
-		printf("%s\n", person1.password);
-        // use appropriate location if you are using MacOS or Linux
-        fptr = fopen("/Users/user/Desktop/details.txt","a");
+	FILE *fptr;
+	printf("Enter Username or Email:\n");
+	scanf("%s", person1.username);
+	printf("%s\n", person1.username);
+	printf("Enter password:\n");
+	scanf("%s", person1.password);
+	printf("%s\n", person1.password);
+ 
+       	fptr = fopen("/Users/user/Desktop/details.txt","a");
 
         if(fptr == NULL)
         {
