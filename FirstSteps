@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void display();
+void add_user();
+struct Person {
+  char username[50];
+  char password[50];
+
+} person1;
+
+int main(){
+	char b[10];
+	int a;
+	int integer;
+	display();
+	for(;;) {
+		//printf("\t\t\t ");
+		scanf("%d", &a);
+		if(1 == a){
+			add_user();
+		} else if (2 == a) {
+			// login
+		} else if (3 == a) {
+			// brochure
+		} else if (4 == a) {
+			// exit
+		}
+		scanf("%d", &integer);
+		system("clear");
+		display();
+	}
+	return 0;
+}
+void display(){
+	printf("\t\t\t**  ||  TOURIZM MANAGEMENT SYSTEM  || ** \n\n");
+	printf("\t\t\t\tAdd User - 1 \n");
+	printf("\t\t\t\tLogin User - 2 \n");
+	printf("\t\t\t\tBrochure - 3 \n");
+	printf("\t\t\t\tExit - 4 \n\n");
+	printf("\t\t\t\tEnter: ");
+	
+}
+void add_user(){
+		FILE *fptr;
+		printf("Enter Username or Email:\n");
+		scanf("%s", person1.username);
+		printf("%s\n", person1.username);
+		printf("Enter password:\n");
+		scanf("%s", person1.password);
+		printf("%s\n", person1.password);
+        // use appropriate location if you are using MacOS or Linux
+        fptr = fopen("/Users/user/Desktop/details.txt","a");
+
+        if(fptr == NULL)
+        {
+            printf("Error!");
+            exit(1);
+        }
+        fprintf(fptr, "%s\n %s \n", person1.username, person1.password);
+        fclose(fptr);
+
+}
